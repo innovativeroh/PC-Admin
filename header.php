@@ -56,10 +56,10 @@
     </div>
     <div>
       <a class="navbar-brand brand-logo" href="../index.html">
-        <img src="../assets/images/logo.svg" alt="logo" />
+        <img src="./assets/images/logo.svg" alt="logo" />
       </a>
       <a class="navbar-brand brand-logo-mini" href="../index.html">
-        <img src="../assets/images/logo-mini.svg" alt="logo" />
+        <img src="./assets/images/logo-mini.svg" alt="logo" />
       </a>
     </div>
   </div>
@@ -173,7 +173,7 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item preview-item">
             <div class="preview-thumbnail">
-              <img src="../assets/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+              <img src="./assets/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
             </div>
             <div class="preview-item-content flex-grow py-2">
               <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
@@ -182,7 +182,7 @@
           </a>
           <a class="dropdown-item preview-item">
             <div class="preview-thumbnail">
-              <img src="../assets/images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+              <img src="./assets/images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
             </div>
             <div class="preview-item-content flex-grow py-2">
               <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
@@ -191,7 +191,7 @@
           </a>
           <a class="dropdown-item preview-item">
             <div class="preview-thumbnail">
-              <img src="../assets/images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+              <img src="./assets/images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
             </div>
             <div class="preview-item-content flex-grow py-2">
               <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
@@ -202,10 +202,10 @@
       </li>
       <li class="nav-item dropdown d-none d-lg-block user-dropdown">
         <a class="nav-link" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-          <img class="img-xs rounded-circle" src="../assets/images/faces/face8.jpg" alt="Profile image"> </a>
+          <img class="img-xs rounded-circle" src="./assets/images/faces/face8.jpg" alt="Profile image"> </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
           <div class="dropdown-header text-center">
-            <img class="img-md rounded-circle" src="../assets/images/faces/face8.jpg" alt="Profile image">
+            <img class="img-md rounded-circle" src="./assets/images/faces/face8.jpg" alt="Profile image">
             <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
             <p class="fw-light text-muted mb-0">allenmoreno@gmail.com</p>
           </div>
@@ -359,7 +359,7 @@
           <small class="text-muted my-auto">19 min</small>
         </li>
         <li class="list">
-          <div class="profile"><img src="../assets/images/faces/face2.jpg" alt="image"><span class="offline"></span>
+          <div class="profile"><img src="./assets/images/faces/face2.jpg" alt="image"><span class="offline"></span>
           </div>
           <div class="info">
             <div class="wrapper d-flex">
@@ -371,7 +371,7 @@
           <small class="text-muted my-auto">23 min</small>
         </li>
         <li class="list">
-          <div class="profile"><img src="../assets/images/faces/face3.jpg" alt="image"><span class="online"></span>
+          <div class="profile"><img src="./assets/images/faces/face3.jpg" alt="image"><span class="online"></span>
           </div>
           <div class="info">
             <p>Daniel Russell</p>
@@ -380,7 +380,7 @@
           <small class="text-muted my-auto">14 min</small>
         </li>
         <li class="list">
-          <div class="profile"><img src="../assets/images/faces/face4.jpg" alt="image"><span class="offline"></span>
+          <div class="profile"><img src="./assets/images/faces/face4.jpg" alt="image"><span class="offline"></span>
           </div>
           <div class="info">
             <p>James Richardson</p>
@@ -389,7 +389,7 @@
           <small class="text-muted my-auto">2 min</small>
         </li>
         <li class="list">
-          <div class="profile"><img src="../assets/images/faces/face5.jpg" alt="image"><span class="online"></span>
+          <div class="profile"><img src="./assets/images/faces/face5.jpg" alt="image"><span class="online"></span>
           </div>
           <div class="info">
             <p>Madeline Kennedy</p>
@@ -398,7 +398,7 @@
           <small class="text-muted my-auto">5 min</small>
         </li>
         <li class="list">
-          <div class="profile"><img src="../assets/images/faces/face6.jpg" alt="image"><span class="online"></span>
+          <div class="profile"><img src="./assets/images/faces/face6.jpg" alt="image"><span class="online"></span>
           </div>
           <div class="info">
             <p>Sarah Graves</p>
@@ -430,9 +430,9 @@
       </a>
       <div class="collapse" id="ui-basic">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="../pages/ui-features/buttons.html">Buttons</a></li>
-          <li class="nav-item"> <a class="nav-link" href="../pages/ui-features/dropdowns.html">Dropdowns</a></li>
-          <li class="nav-item"> <a class="nav-link" href="../pages/ui-features/typography.html">Typography</a></li>
+          <li class="nav-item"> <a class="nav-link" href="./pages/ui-features/buttons.html">Buttons</a></li>
+          <li class="nav-item"> <a class="nav-link" href="./pages/ui-features/dropdowns.html">Dropdowns</a></li>
+          <li class="nav-item"> <a class="nav-link" href="./pages/ui-features/typography.html">Typography</a></li>
         </ul>
       </div>
     </li>
@@ -446,7 +446,7 @@
       </a>
       <div class="collapse" id="form-elements">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"><a class="nav-link" href="../pages/forms/basic_elements.html">Basic Elements</a></li>
+          <li class="nav-item"><a class="nav-link" href="./pages/forms/basic_elements.html">Basic Elements</a></li>
         </ul>
       </div>
     </li>
@@ -458,7 +458,7 @@
       </a>
       <div class="collapse" id="charts">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="../pages/charts/chartjs.html">ChartJs</a></li>
+          <li class="nav-item"> <a class="nav-link" href="./pages/charts/chartjs.html">ChartJs</a></li>
         </ul>
       </div>
     </li>
@@ -470,7 +470,7 @@
       </a>
       <div class="collapse" id="tables">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="../pages/tables/basic-table.html">Basic table</a></li>
+          <li class="nav-item"> <a class="nav-link" href="./pages/tables/basic-table.html">Basic table</a></li>
         </ul>
       </div>
     </li>
@@ -482,7 +482,7 @@
       </a>
       <div class="collapse" id="icons">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="../pages/icons/mdi.html">Mdi icons</a></li>
+          <li class="nav-item"> <a class="nav-link" href="./pages/icons/mdi.html">Mdi icons</a></li>
         </ul>
       </div>
     </li>
@@ -495,7 +495,7 @@
       </a>
       <div class="collapse" id="auth">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="../pages/samples/login.html"> Login </a></li>
+          <li class="nav-item"> <a class="nav-link" href="./pages/samples/login.html"> Login </a></li>
         </ul>
       </div>
     </li>
