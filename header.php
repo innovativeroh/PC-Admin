@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Star Admin2 </title>
+  <title> Plenty Cred </title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="assets/vendors/feather/feather.css">
   <link rel="stylesheet" href="assets/vendors/mdi/css/materialdesignicons.min.css">
@@ -301,7 +301,7 @@
       </div>
       <ul class="chat-list">
         <li class="list active">
-          <div class="profile"><img src="../assets/images/faces/face1.jpg" alt="image"><span class="online"></span>
+          <div class="profile"><img src="./assets/images/faces/face1.jpg" alt="image"><span class="online"></span>
           </div>
           <div class="info">
             <p>Thomas Douglas</p>
