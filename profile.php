@@ -32,18 +32,38 @@ while ($rows = mysqli_fetch_array($query)) {
 //sql for kyc details
 $sql = "SELECT * FROM `kycdetails` WHERE `id`='$user_id'";
 $query = mysqli_query($conn, $sql);
+$nodata = "Not Entered";
 while ($rows = mysqli_fetch_array($query)) {
   $aadhaar_number = $rows['aadharNo'];
-  if($aadhaar_number == "") {
-    $aadhaar_number = "No Data";
-  } else {
-    $aadhaar_number;
+  if ($aadhaar_number == "") {
+    $aadhaar_number = $nodata;
   }
+
   $panCard_number = $rows['panCardNo'];
+  if ($panCard_number == "") {
+    $panCard_number = $nodata;
+  }
+  
   $electricity_bill = $rows['electricityBill'];
+  if ($electricity_bill == "") {
+    $electricity_bill = $nodata;
+  }
+  
   $driving_license = $rows['drivingLicense'];
+  if ($driving_license == "") {
+    $driving_license = $nodata;
+  }
+  
   $bankAccount_number = $rows['bankAccountNo'];
+  if ($bankAccount_number == "") {
+    $bankAccount_number = $nodata;
+  }
+  
   $ifsc_code = $rows['ifscCode'];
+  if ($ifsc_code == "") {
+    $ifsc_code = $nodata;
+  }
+  
   $salary_slip_current_month_path = $rows['salarySlipCurrentMonthPath'];
 }
 
@@ -194,7 +214,7 @@ while ($rows = mysqli_fetch_array($query)) {
     </div>
   </div>
 
-<!-- kyc Details -->
+  <!-- kyc Details -->
   <div class="col-lg-6 grid-margin stretch-card">
     <div class="card mb-4">
       <div class="card-body">

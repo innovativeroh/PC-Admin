@@ -5,9 +5,7 @@
   <style>
     #logo {
       width: 6em;
-      height: 1.8em;
-      
-      /* border-radius: 50%; */
+      height: 1.8em;      
       filter: drop-shadow(1px 1px 2px black);
     }
 
