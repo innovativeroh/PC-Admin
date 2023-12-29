@@ -34,6 +34,11 @@ $sql = "SELECT * FROM `kycdetails` WHERE `id`='$user_id'";
 $query = mysqli_query($conn, $sql);
 while ($rows = mysqli_fetch_array($query)) {
   $aadhaar_number = $rows['aadharNo'];
+  if($aadhaar_number == "") {
+    $aadhaar_number = "No Data";
+  } else {
+    $aadhaar_number;
+  }
   $panCard_number = $rows['panCardNo'];
   $electricity_bill = $rows['electricityBill'];
   $driving_license = $rows['drivingLicense'];
@@ -146,7 +151,7 @@ while ($rows = mysqli_fetch_array($query)) {
             <p class="mb-0">Job Tenure</p>
           </div>
           <div class="col-sm-9">
-            <p class="text-muted mb-0"><?php echo $job_tenure ?></p>
+            <p class="text-muted mb-0"><?php echo @$job_tenure ?></p>
           </div>
         </div>
         <hr>
