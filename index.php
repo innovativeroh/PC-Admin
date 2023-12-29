@@ -63,7 +63,7 @@ if (isset($_SESSION['username'])) {
         // Output data of each row
         while ($row = $result->fetch_assoc()) {
           $gender = $row["gender"];
-          if($gender == "m") {
+          if($gender == "m" OR "M") {
             $gender = "Male";
           } else {
             $gender = "Female";
