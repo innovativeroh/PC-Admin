@@ -1,5 +1,12 @@
-<?php include_once('./connections.php') ; ?>
+<?php include_once('./connections.php'); ?>
 <?php include_once('./header.php'); ?>
+<?php
+if (isset($_SESSION['username'])) {
+} else {
+  echo "<meta http-equiv=\"refresh\" content=\"0; url=login.php\">";
+  exit();
+}
+?>
 <div class="content">
   <h2>User List</h2>
   <table class="table">
@@ -18,6 +25,9 @@
     </thead>
     <tbody>
       <?php
+      $sql = "SELECT *,DATE_FORMAT(dob,'%Y-%m-%d') AS dob FROM `user`";
+      $query = mysqli_query($conn, $sql);
+      $result = $conn->query($sql);
       if ($result->num_rows > 0) {
         // Output data of each row
         while ($row = $result->fetch_assoc()) {
