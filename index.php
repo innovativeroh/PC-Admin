@@ -18,10 +18,6 @@ if (isset($_SESSION['username'])) {
         <th>Gender</th>
         <th>DOB</th>
         <th>Details</th>
-        <!-- <th>isEmailVerified</th>
-        <th>isMobileVerified</th>
-        <th>UserSecret</th> -->
-        <!-- Add more columns based on your database structure -->
       </tr>
       <style>
         #myButton {

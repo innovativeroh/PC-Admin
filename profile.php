@@ -1,4 +1,3 @@
-
 <?php include_once('./connections.php'); ?>
 <?php include_once('./header.php'); ?>
 <?php
@@ -9,42 +8,124 @@ if (isset($_SESSION['username'])) {
 }
 
 $user_id = @$_GET['id'];
-$sql = "SELECT * FROM `user` WHERE `id`='$user_id'";
+$sql = "SELECT *,DATE_FORMAT(dob,'%Y-%m-%d') AS dob FROM `user` WHERE `id`='$user_id'";
 $query = mysqli_query($conn, $sql);
-while($rows = mysqli_fetch_array($query)) {
-    $user_name = $rows['fullName'];
+while ($rows = mysqli_fetch_array($query)) {
+  $user_name = $rows['fullName'];
+  $email = $rows['email'];
+  $gender = $rows['gender'];
+  $dob = $rows['dob'];
+  $mob = $rows['mobileNumber'];
 }
 ?>
-         <div class="row">
-            <div class="col-lg-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Profile</h4>
-                  <p class="card-description">
-                    All The Profile Details<code> Mentioned In This Section</code>
-                  </p>
-                  <div class="table-responsive">
-                    <table class="table">
-                        <?php echo $user_name; ?>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Hoverable Table</h4>
-                  <p class="card-description">
-                    Add class <code>.table-hover</code>
-                  </p>
-                  <div class="table-responsive">
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- <div class="col-lg-12 grid-margin stretch-card">
+<div class="col-lg-4">
+  <div class="card mb-4">
+    <div class="card-body text-center">
+      <!-- live Selfie upload -->
+      <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="Live Selfie" class="rounded-circle img-fluid" style="width: 150px;">
+      <h5 class="my-3">
+        <?php echo $user_name; ?>
+      </h5>
+      <!-- role of the employee -->
+      <p class="text-muted mb-1">Full Stack Developer</p>
+      <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
+      <div class="d-flex justify-content-center mb-2">
+        <!-- view Salary slip -->
+        <button type="button" class="btn btn-primary">Follow</button>
+        <button type="button" class="btn btn-outline-primary ms-1">Message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-8">
+  <div class="card mb-4">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-sm-3">
+          <p class="mb-0">Full Name</p>
+        </div>
+        <div class="col-sm-9">
+          <p class="text-muted mb-0"><?php echo $user_name ?></p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <p class="mb-0">Email</p>
+        </div>
+        <div class="col-sm-9">
+          <p class="text-muted mb-0"><?php echo $email ?></p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <p class="mb-0">Mobile</p>
+        </div>
+        <div class="col-sm-9">
+          <p class="text-muted mb-0"><?php echo $mob ?></p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <p class="mb-0">Gender</p>
+        </div>
+        <div class="col-sm-9">
+          <p class="text-muted mb-0"><?php echo $gender ?></p>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <p class="mb-0">Address</p>
+        </div>
+        <div class="col-sm-9">
+          <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+
+  <div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Profile</h4>
+        <p class="card-description">
+          All The Profile Details<code> Mentioned In This Section</code>
+        </p>
+        <div class="table-responsive">
+          <br>
+          <?php echo $email; ?>
+          <br>
+          <?php echo $dob; ?>
+          <br>
+          <?php echo $gender; ?>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-6 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Hoverable Table</h4>
+        <p class="card-description">
+          Add class <code>.table-hover</code>
+        </p>
+        <div class="table-responsive">
+
+          <?php echo "f   "; ?>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Striped Table</h4>
@@ -219,6 +300,6 @@ while($rows = mysqli_fetch_array($query)) {
                 </div>
               </div>
             </div> -->
-          </div>
-        </div>
-        <?php include_once('./footer.php'); ?>
+</div>
+</div>
+<?php include_once('./footer.php'); ?>
