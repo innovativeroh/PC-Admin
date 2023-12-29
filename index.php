@@ -62,11 +62,17 @@ if (isset($_SESSION['username'])) {
       if ($result->num_rows > 0) {
         // Output data of each row
         while ($row = $result->fetch_assoc()) {
+          $gender = $row["gender"];
+          if($gender == "m") {
+            $gender = "Male";
+          } else {
+            $gender = "Female";
+          }
           echo "<tr>";
           echo "<td>" . $row["id"] . "</td>";
           echo "<td>" . $row["fullName"] . "</td>";
           echo "<td>" . $row["email"] . "</td>";
-          echo "<td>" . $row["gender"] . "</td>";
+          echo "<td>$gender</td>";
           echo "<td>" . $row["dob"] . "</td>";
           echo "<td>" . "<a href='profile.php?id=". $row["id"]. "'><button id='myButton'> View </button>" . "</td></a>";
 
