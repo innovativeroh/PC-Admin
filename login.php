@@ -8,7 +8,15 @@ if (isset($_SESSION['username'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <style>
+    #logo {
+      height: 4em;
+      margin-bottom: 2em;
+      filter: drop-shadow(1px 1px 2px black);
+    }
+  </style>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,7 +34,7 @@ if (isset($_SESSION['username'])) {
   <!-- inject:css -->
   <link rel="stylesheet" href="./assets/css/vertical-layout-light/style.css">
   <!-- endinject -->
-  <link rel="shortcut icon" href="./assets/images/favicon.png" />
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" />
 </head>
 
 <body>
@@ -36,57 +44,54 @@ if (isset($_SESSION['username'])) {
         <div class="row w-100 mx-0">
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
-              <div class="brand-logo">
-                <img src="./assets/images/logo.svg" alt="logo">
+              <div class="logo-brand">
+                <img src="./assets/images/logoAdmin.png" alt="logo" id="logo">
               </div>
               <?php echo @$_SESSION['user']; ?>
               <?php
-            $uid = @$_POST['email'];
-            $pwd = @$_POST['password'];
-            if (isset($_POST['sign_in'])) {
+              $uid = @$_POST['email'];
+              $pwd = @$_POST['password'];
+              if (isset($_POST['sign_in'])) {
                 //Error Handlers
                 //Check if inputs are empty
                 if (empty($uid) || empty($pwd)) {
-                    echo "<div class='alert-danger'>Username & Password is Invalid!</div><br>";
+                  echo "<div class='alert-danger'>Username & Password is Invalid!</div><br>";
                 } else {
-                    $sql = "SELECT * FROM `admin` WHERE email='$uid'";
-                    $result = mysqli_query($conn, $sql);
-                    $resultCheck = mysqli_num_rows($result);
-                    if ($resultCheck < 1) {
-                        echo "<div class='alert-danger'>Email is Incorrect!</div><br>";
-                    } else {
-                        
-                        if ($row = mysqli_fetch_assoc($result)) {
-                            $id_login = $row['id'];
-                            $username_login = $row['email'];
-                            $password_login = $row['password'];
-                            //dehashing the password        
-                            
-                            if (!$password_login == $pwd) {
-                                echo "<div class='alert-danger'>Wrong password credentials!</div><br>";
-                            } 
-                            else {
-                                $_SESSION['id'] = $id_login;
-                                $_SESSION['username'] = $username_login;
-                                $_SESSION['password'] = $password_login;
-                                echo "<meta http-equiv=\"refresh\" content=\"0; url=index.php\">";
-                                exit();
-                            }
-                        }
+                  $sql = "SELECT * FROM `admin` WHERE email='$uid'";
+                  $result = mysqli_query($conn, $sql);
+                  $resultCheck = mysqli_num_rows($result);
+                  if ($resultCheck < 1) {
+                    echo "<div class='alert-danger'>Email is Incorrect!</div><br>";
+                  } else {
+
+                    if ($row = mysqli_fetch_assoc($result)) {
+                      $id_login = $row['id'];
+                      $username_login = $row['email'];
+                      $password_login = $row['password'];
+                      //dehashing the password        
+
+                      if (!$password_login == $pwd) {
+                        echo "<div class='alert-danger'>Wrong password credentials!</div><br>";
+                      } else {
+                        $_SESSION['id'] = $id_login;
+                        $_SESSION['username'] = $username_login;
+                        $_SESSION['password'] = $password_login;
+                        echo "<meta http-equiv=\"refresh\" content=\"0; url=index.php\">";
+                        exit();
+                      }
                     }
+                  }
                 }
-            }
-    ?>
+              }
+              ?>
               <h4>Hello! let's get started</h4>
               <h6 class="fw-light">Sign in to continue.</h6>
               <form action="login.php" method="POST" class="pt-3">
                 <div class="form-group">
-                  <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1"
-                    placeholder="Username">
+                  <input type="email" name="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
                 </div>
                 <div class="form-group">
-                  <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1"
-                    placeholder="Password">
+                  <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
                 </div>
                 <div class="mt-3">
                   <button type="submit" name="sign_in" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>

@@ -54,7 +54,7 @@ while ($rows = mysqli_fetch_array($query)) {
           <?php echo $user_name; ?>
         </h5>
         <!-- role of the employee -->
-        <p class="text-muted mb-1">Full Stack Developer</p>
+        <p class="text-muted mb-1"><?php echo $designation ?></p>
         <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
         <div class="d-flex justify-content-center mb-2">
           <!-- view Salary slip -->
