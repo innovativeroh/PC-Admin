@@ -68,7 +68,7 @@ if (isset($_SESSION['username'])) {
           echo "<td>" . $row["email"] . "</td>";
           echo "<td>" . $row["gender"] . "</td>";
           echo "<td>" . $row["dob"] . "</td>";
-          echo "<td>" . "<button id='myButton'> View </button>" . "</td>";
+          echo "<td>" . "<a href='profile.php?id=". $row["id"]. "'><button id='myButton'> View </button>" . "</td></a>";
 
           // echo "<td>" . $row["isEmailVerified"] . "</td>";
           // echo "<td>" . $row["isMobileVerified"] . "</td>";
