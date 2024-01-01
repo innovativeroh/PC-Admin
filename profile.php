@@ -1,3 +1,9 @@
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
 <?php include_once('./connections.php'); ?>
 <?php include_once('./header.php'); ?>
 <?php
@@ -32,20 +38,59 @@ while ($rows = mysqli_fetch_array($query)) {
 //sql for kyc details
 $sql = "SELECT * FROM `kycdetails` WHERE `id`='$user_id'";
 $query = mysqli_query($conn, $sql);
+$nodata = "Not Entered";
 while ($rows = mysqli_fetch_array($query)) {
   $aadhaar_number = $rows['aadharNo'];
-  if($aadhaar_number == "") {
-    $aadhaar_number = "No Data";
-  } else {
-    $aadhaar_number;
+  if ($aadhaar_number == "") {
+    $aadhaar_number = $nodata;
   }
+
   $panCard_number = $rows['panCardNo'];
+  if ($panCard_number == "") {
+    $panCard_number = $nodata;
+  }
+
   $electricity_bill = $rows['electricityBill'];
+  if ($electricity_bill == "") {
+    $electricity_bill = $nodata;
+  }
+
   $driving_license = $rows['drivingLicense'];
+  if ($driving_license == "") {
+    $driving_license = $nodata;
+  }
+
   $bankAccount_number = $rows['bankAccountNo'];
+  if ($bankAccount_number == "") {
+    $bankAccount_number = $nodata;
+  }
+
   $ifsc_code = $rows['ifscCode'];
+  if ($ifsc_code == "") {
+    $ifsc_code = $nodata;
+  }
+
   $salary_slip_current_month_path = $rows['salarySlipCurrentMonthPath'];
 }
+
+$data = array(1, 0, 1, 0, 1, 0, 1 , 1);
+$progress_value = 0;
+
+$number_of_data = count($data);
+// echo $number_of_data;
+$counter = 0;
+
+while ($counter < $number_of_data) {
+  if ($data[$counter] == 1) {
+    $progress_value++;
+  }
+  $counter++;
+}
+
+$percentage = round(($progress_value / $number_of_data) * 100);
+
+// echo $percentage;
+
 
 ?>
 
@@ -59,7 +104,7 @@ while ($rows = mysqli_fetch_array($query)) {
           <?php echo $user_name; ?>
         </h5>
         <!-- role of the employee -->
-        <p class="text-muted mb-1">Full Stack Developer</p>
+        <p class="text-muted mb-1"><?php echo $designation ?></p>
         <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
         <div class="d-flex justify-content-center mb-2">
           <!-- view Salary slip -->
@@ -194,7 +239,7 @@ while ($rows = mysqli_fetch_array($query)) {
     </div>
   </div>
 
-<!-- kyc Details -->
+  <!-- kyc Details -->
   <div class="col-lg-6 grid-margin stretch-card">
     <div class="card mb-4">
       <div class="card-body">
@@ -264,6 +309,26 @@ while ($rows = mysqli_fetch_array($query)) {
       </div>
     </div>
   </div>
+</div>
+<div class="row">
+  <div class="col-lg-12 grid-margin stretch-card">
+    <div class="card mb-4">
+      <div class="card-body">
+        <h3 class="mb-3">Profile Completion</h3>
+        <div class="row">
+          <div class="col-sm-6">
+            <button id="button" class="btn btn-primary">Refresh</button>
+          </div>
+          <div class="col-sm-12">
+            <div class="progress" style="height: 2em;">
+              <div class="progress-bar progress-bar-animated progress-bar-striped" id="changer" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"><?php echo $percentage . "%" ?></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 <!-- <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
@@ -440,6 +505,15 @@ while ($rows = mysqli_fetch_array($query)) {
                 </div>
               </div>
             </div> -->
-</div>
-</div>
+<script>
+  var percentage = '<?php echo $percentage; ?>';
+  const button = document.getElementById('button');
+  // console.log(percentage);
+  button.addEventListener('click', () => {
+    const element = document.getElementById('changer');
+    element.style.width = String(percentage).concat('%');
+    // console.log(percentage);
+    // console.log("Working");
+  });
+</script>
 <?php include_once('./footer.php'); ?>
