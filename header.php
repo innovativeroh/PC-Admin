@@ -68,10 +68,10 @@
     </div>
     <div>
       <a class="navbar-brand brand-logo" href="./index.php">
-        <img src="./assets/images/logoAdmin.png" alt="logo" id="logo" />
+        <img src="./assets/images/logoAdmin.png" alt="logo" id="logo" style="width: 180px; height: 30px;" />
       </a>
       <a class="navbar-brand brand-logo-mini" href="./index.php">
-        <img src="./assets/images/logo.png" alt="logo" id="mini-logo" />
+        <img src="./assets/images/logo.png" alt="logo" id="mini-logo" style="width: 180px; height: 30px;" />
       </a>
     </div>
   </div>
