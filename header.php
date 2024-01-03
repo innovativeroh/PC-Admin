@@ -378,11 +378,19 @@
       </li>
       <li class="nav-item nav-category">General</li>
       <li class="nav-item">
-        <a href="index.php" class="nav-link" href="#">
-          <i class="menu-icon mdi mdi-floor-plan"></i>
-          <span class="menu-title">Users</span>
-        </a>
-      </li>
+      <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false" aria-controls="tables">
+        <i class="menu-icon mdi mdi-table"></i>
+        <span class="menu-title">Users</span>
+        <i class="menu-arrow"></i>
+      </a>
+      <div class="collapse" id="tables">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="index.php">All Users</a></li>
+          <li class="nav-item"> <a class="nav-link" href="rj_users.php">Rejected Users</a></li>
+          <li class="nav-item"> <a class="nav-link" href="ap_users.php">Approved Users</a></li>
+        </ul>
+      </div>
+    </li>
     </ul>
   </nav>
   <!-- partial -->
